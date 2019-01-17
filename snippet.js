@@ -7,12 +7,7 @@ function isArray(arr) {
 // flat multidimensional arrays
 function flatArr(arr) {
   if (isArray(arr)) {
-    return arr.flatMap(a => {
-      if (isArray(arr)) {
-        return flatArr(a)
-      }
-      return a
-    })
+    return arr.flat(Infinity)
   }
   return arr
 }
