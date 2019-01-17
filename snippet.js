@@ -22,3 +22,10 @@ function arrToObj(arr) {
   // return {...arr}
 }
 
+// remove the duplicate data in array
+function rmDuplicate(arr) {
+  return Array.from(new Set(arr))
+}
+
+
+
