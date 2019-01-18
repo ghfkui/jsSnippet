@@ -4,6 +4,10 @@ function isArray(arr) {
   // return arr.constructor === Array
 }
 
+function isString(str) {
+  return typeof str === 'string'
+}
+
 // flat multidimensional arrays
 function flatArr(arr) {
   if (isArray(arr)) {
@@ -17,10 +21,17 @@ function arrToObj(arr) {
   // return {...arr}
 }
 
-// remove the duplicate data in array
-function rmDuplicate(arr) {
-  return Array.from(new Set(arr))
+// remove the duplicate data in array/string
+function rmDuplicate(data) {
+  if (isArray(data)) {
+    return [...new Set(data)]
+  } else if (isString(data)) {
+    return [...new Set(data)].join('')
+  }
+  return data
 }
+
+
 
 
 
